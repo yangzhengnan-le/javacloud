@@ -61,7 +61,6 @@ public class TranslateResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<TranslateDTO> translate(@RequestParam String query) throws URISyntaxException {
         log.debug("REST request to save User : {}", query);
 
