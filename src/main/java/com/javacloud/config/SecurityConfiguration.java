@@ -74,7 +74,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/i18n/**")
             .antMatchers("/content/**")
             .antMatchers("/swagger-ui/index.html")
-            .antMatchers("/test/**");
+            .antMatchers("/test/**")
+            //忽略api/translate的跨域检测
+            .antMatchers("/api/translate");
     }
 
     @Override

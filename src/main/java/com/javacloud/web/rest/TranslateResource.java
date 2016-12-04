@@ -4,28 +4,21 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.codahale.metrics.annotation.Timed;
-import com.javacloud.domain.User;
-import com.javacloud.security.AuthoritiesConstants;
 import com.javacloud.service.BaiduService;
-
 import com.javacloud.service.GoogleService;
 import com.javacloud.service.YoudaoService;
 import com.javacloud.service.dto.TranslateDTO;
-import com.javacloud.web.rest.util.HeaderUtil;
-import com.javacloud.web.rest.vm.ManagedUserVM;
-
-import org.json.JSONString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 
@@ -58,12 +51,12 @@ public class TranslateResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @RequestMapping(value = "/translate",
-        method = RequestMethod.GET,
+        method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<TranslateDTO> translate(@RequestParam String query) throws URISyntaxException {
         log.debug("REST request to save User : {}", query);
-
+        // TODO: 2016/12/4 不支持字符串中有换行符、超时异常，以及rest结果中的异常信息
         String baiduWords=baiduService.translate(query);
         JSONObject object = JSON.parseObject(baiduWords);
        // JSONObject dst=object.getJSONObject("dst");
