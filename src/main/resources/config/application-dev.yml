@@ -24,7 +24,7 @@ spring:
         serialization.indent_output: true
     data:
         mongodb:
-            uri: mongodb://192.168.99.100:27017
+            uri: mongodb://java-cloud:dlkk49slklAP09XnyR5@103.200.31.78:27017/javacloud
             database: javacloud
     mail:
         host: localhost
