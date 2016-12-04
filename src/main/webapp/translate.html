@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>机器翻译</title>
+    <meta name="description" content="机器翻译 翻译 比较 translate">
+    <meta name="google" value="notranslate">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css content/css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="minitools/translate/global_styles.css">
+    <link rel="stylesheet" href="minitools/translate/homepage.css">
+    <link rel="stylesheet" href="minitools/translate/jquery-ui.min.css">
+    <link rel="stylesheet" href="minitools/translate/font-awesome.min.css">
+    <link rel="stylesheet" href="minitools/translate/slick-theme.css">
+    <link rel="stylesheet" href="minitools/translate/slick.css">
+    <style type="text/css">
+        body{
+            /*background-image: url('minitools/translate/5-13050GZ015.gif');*/
+            /*background-color: #eee;*/
+        }
+
+        .loading{
+            background-image: url('minitools/translate/loading.jpg');
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-color: #fff;
+        }
+
+        .non-loading{
+            background-color:#f1f1f1;
+        }
+
+        .logo-text{
+            color:#fff;opacity: 1;font-weight:400;font-family:Helvetica
+        }
+
+    </style>
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body >
+<div id="header">
+    <div class="container">
+        <div class="row wide normal-xs">
+            <div class="col-xs-2 col-md-4">
+                <h1><a href="/" class="logo-text">Translate & Compare</a></h1>
+            </div>
+            <div class="col-xs-10 col-md-8 text-align-right">
+
+
+                <ul id="nav" class="pull-right">
+                    <li>
+                        <p  class="logo-text" style="color:#bbb;font-family:Helvetica Neue" >Simple translator from en to zh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container" id="translate_main_container" style="">
+
+
+        <div class="row">
+            <div id="translate" style="width: 1170px; margin-left: -585px; height: 9px;">
+                <div class="row margin-top-50 narrow">
+                    <div  class="col-xs-5 remove-padding">
+                        <div class="btn-group pull-left" role="group" aria-label="..." id="recent_source_languages">
+                        </div>
+
+                        <button type="button" id="detect_button" class="btn btn-default lang_button pull-right blue"
+                                onclick="doTranslate()">translate</span></button>
+                    </div>
+                    <div class="col-xs-1 remove-padding">
+
+                    </div>
+                    <div class="col-xs-5 remove-padding">
+
+                        <div class="btn-group pull-left" role="group" aria-label="..." id="recent_translation_tools">
+                            <button type="button" class="btn btn-default lang_button blue"
+                                    onclick="switchSrc(this)"><span class="ellipis">google</span></button>
+                            <button type="button" class="btn btn-default lang_button"
+                                    onclick="switchSrc(this)"><span class="ellipis">baidu</span></button>
+                            <button type="button" class="btn btn-default lang_button"
+                                    onclick="switchSrc(this)"><span class="ellipis">youdao</span></button>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-1 remove-padding">
+
+
+                    </div>
+                </div>
+                <div class="row margin-top-15 narrow">
+                    <div id="loading-container" class="col-xs-6 remove-padding">
+                        <div id="source_wrapper">
+                            <textarea id="source_text" style="font-size: 1.8em;height: 260px"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6 remove-padding">
+                        <div id="translation_wrapper" class="non-loading">
+                            <div id="error-msg" style="display: none;font-size: 1.8em;"
+                                 class="alert alert-danger remove-padding"
+                                 role="alert"></div>
+                            <div id="translation_text" notranslate="" style="font-size: 1.8em;">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
+        <div class="navbar-inner navbar-content-center">
+            <p class="text-muted credit" style="padding: 10px;">
+
+            </p>
+        </div>
+    </nav>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="minitools/translate/translate.js"></script>
+
+</body>
+</html>

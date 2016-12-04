@@ -19,7 +19,8 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb://localhost:27017
+            #uri: mongodb://localhost:27017
+            uri: mongodb://java-cloud:dlkk49slklAP09XnyR5@103.200.31.78:27017/javacloud
             database: javacloud
     mail:
         host: localhost
